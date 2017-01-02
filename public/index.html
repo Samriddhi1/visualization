@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="http://d3js.org/d3.v4.min.js"></script>
+  <meta charset="utf-8">
+  <title>d3 Array of Tables Demo</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <!-- Author: Bo Ericsson, bo@boe.net -->
+  <link rel=stylesheet type=text/css href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" media="all">
+  <style>
+    dcode {
+      padding: 50px;
+      font-size: 12px;
+    }
+    .well1 {
+      padding-top: 0px;
+      padding-bottom: 0px;
+      padding-left: -10px;
+      background: gainsboro;
+       height: 100px;
+        width: 400px;
+        margin-left: 10px;
+
+    }
+    .h3class {
+
+    margin-left: 7px;
+    padding-top: 17px;
+
+    }
+    table {
+      font-size: 10px;
+      line-height: 10px;
+    }
+    td, th {
+      width: 33.3%;
+    }
+    label {
+      margin-bottom: 10px;
+    }
+    .axis--x path {
+      display: none;
+    }
+
+    .line {
+      fill: none;
+      stroke: steelblue;
+      stroke-width: 1.5px;
+    }
+    .navbar{
+      margin:0;
+    }
+    .navbar-header
+    {
+      width:50%;
+    }
+    .nav-tabs{
+      border-bottom:0;
+    }
+    .total-projects {
+             background: #00868B;
+             width: 200px;
+             position:relative;
+             height:100px;
+             font-size: 29px;
+             color: #F4A460;
+             vertical-align: middle;
+             text-align: center;
+             padding-top: 12px;
+             padding-bottom: 0px;
+             border-radius: 25px;
+         }
+
+  </style>
+
+</head>
+<body>
+
+<header>
+
+
+  <div class="bs-example">
+    <nav class="navbar navbar-inverse navbar-static">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <ul class="nav nav-tabs">
+          <!-- <a class="navbar-brand" href="#/"><span>Project Liberty @ </span>IBM</a> -->
+          <div style="margin-left: 10%">
+            <li><a class="navbar-brand" href="../../index.html">Home</a></li>
+          </div>
+          <li><a class="navbar-brand" href="../TermOfUse.html">Term of Use </a></li>
+          <li class="dropdown">
+            <a class="navbar-brand" href="#" data-toggle="dropdown" class="dropdown-toggle"> Tools <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li class="col-sm-6 auto-fill">
+              <li><a href="../toolchain/Gitlab/gitlab.html">GitLab</a></li>
+              <li><a href="../toolchain/Jira/jira.html">JIRA</a></li>
+              <li><a href="../toolchain/jenkins/Jenkins.html">Jenkins</a></li>
+              <li><a href="../toolchain/UCD/ucd.html">UCD</a></li>
+              <li><a href="../toolchain/Artifactory/artifactory.html">Artifactory</a></li>
+              <li><a href="../toolchain/SonarQube/SonarQube.html">SonarQube</a></li>
+              </li>
+              <li class="divider"></li>
+              <li><a href="../Links1.html">Links</a></li>
+              <li class="divider"></li>
+              <li><a href="../linktools/page.html">Link your Tools</a></li>
+              <li class="divider"></li>
+              <li class="col-sm-4">
+              <li><a href="d3index.html">Tool Usage</a></li>
+              <li><a href="#">Tool Status</a></li>
+              <li><a href="#">DNS Help</a></li>
+              <li><a href="#">Create a ticket</a></li>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+
+            <a class="navbar-brand" href="#" data-toggle="dropdown" class="dropdown-toggle"> Compliance <b class="caret"></b></a>
+
+            <ul class="dropdown-menu">
+              <li><a href="#">OpenSource</a></li>
+              <!--<li class="divider"></li>
+              <li><a href="#">Pedigree Check</a></li>
+              <li><a href="#">Clearance CLI Tool</a></li>-->
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a class="navbar-brand" href="#" data-toggle="dropdown" class="dropdown-toggle"> Help <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li class="col-sm-6 auto-fill">
+              <li><a href="../Training/training.html"> Enablement Links </a></li>
+              <li><a href="../FAQ/generalfaq.html"> Frequently Asked Questions </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <!--  <li><a class="navbar-brand" href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->
+        <!-- <li><a class="navbar-brand" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+        <a class="navbar-brand" href="#" data-toggle="dropdown" class="dropdown-toggle"> Hi, User <b class="caret"></b></a>
+
+        <ul class="dropdown-menu">
+          <li class="col-sm-6 auto-fill"/>
+          <li><a href="#">Logout</a></li>
+          </li>
+        </ul>
+      </ul>
+
+      <!--  <ul class="nav navbar-nav navbar-right">
+            <li ng-hide="USER"><a ng-click="signInW3ID()"><span class="fa fa-user"></span> &nbsp;Sign In</a></li>
+            <li ng-show="USER" class="dropdown dropdown-large"> <a href="" class="dropdown-toggle" ng-cloak>Hi, {{USER.firstName}}</a>
+                <ul class="dropdown-menu dropdown-menu-large row">
+                    <li class="col-sm-6 auto-fill">
+                        <ul>
+                            <li><a ng-click="samlLogout()">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>-->
+    </nav>
+  </div>
+</header>
+
+<page>
+ <script src="./main.js"></script>
+</page>
+
+<!--<footer style="position: absolute;bottom: 0;">
+  <nav id="footnav" class="navbar" role="navigation">
+    <nav class="navbar navbar-inverse navbar-static">
+      <div class="container">
+        <div class="navbar-right navbar-main-collapse">
+          <ul class="nav navbar-nav" style="vertical-align: middle;">
+            <div id="copy" class="navbar-brand">
+              <p>  IBM Confidential | All rights reserved </p>
+            </div>
+          </ul>
+        </div>
+      </div>
+
+    </nav>
+  </nav>
+</footer>-->
+</body>
+</html>

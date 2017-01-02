@@ -1,0 +1,61 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'config.json' ]
+2 info using npm@3.10.8
+3 info using node@v6.9.1
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData config.json
+8 silly fetchOtherPackageData config.json
+9 silly cache add args [ 'config.json', null ]
+10 verbose cache add spec config.json
+11 silly cache add parsed spec Result {
+11 silly cache add   raw: 'config.json',
+11 silly cache add   scope: null,
+11 silly cache add   escapedName: 'config.json',
+11 silly cache add   name: null,
+11 silly cache add   rawSpec: 'config.json',
+11 silly cache add   spec: '/Users/sumantk/Documents_IBM/Samriddhi/samjson/config.json',
+11 silly cache add   type: 'local' }
+12 silly addLocalTarball shasum (computed) 097134821b5c55c8678a319f1fed433f5012ef6a
+13 verbose addTmpTarball /Users/sumantk/Documents_IBM/Samriddhi/samjson/config.json not in flight; adding
+14 verbose correctMkdir /Users/sumantk/.npm correctMkdir not in flight; initializing
+15 verbose addTmpTarball validating metadata from /Users/sumantk/Documents_IBM/Samriddhi/samjson/config.json
+16 verbose tar unpack /Users/sumantk/Documents_IBM/Samriddhi/samjson/config.json
+17 verbose tar unpacking to /var/folders/8c/l1x58lhd0mj6kc1g796wptxr0000gp/T/npm-76581-ff15cf6b/unpack-a2c2d03d
+18 silly gentlyRm /var/folders/8c/l1x58lhd0mj6kc1g796wptxr0000gp/T/npm-76581-ff15cf6b/unpack-a2c2d03d is being purged
+19 verbose gentlyRm don't care about contents; nuking /var/folders/8c/l1x58lhd0mj6kc1g796wptxr0000gp/T/npm-76581-ff15cf6b/unpack-a2c2d03d
+20 silly gunzTarPerm modes [ '755', '644' ]
+21 error not a package /Users/sumantk/Documents_IBM/Samriddhi/samjson/config.json
+22 error addLocal Could not install /Users/sumantk/Documents_IBM/Samriddhi/samjson/config.json
+23 silly fetchPackageMetaData Error: ENOENT: no such file or directory, open '/var/folders/8c/l1x58lhd0mj6kc1g796wptxr0000gp/T/npm-76581-ff15cf6b/unpack-a2c2d03d/package.json'
+23 silly fetchPackageMetaData     at Error (native)
+23 silly fetchPackageMetaData  error for config.json { Error: ENOENT: no such file or directory, open '/var/folders/8c/l1x58lhd0mj6kc1g796wptxr0000gp/T/npm-76581-ff15cf6b/unpack-a2c2d03d/package.json'
+23 silly fetchPackageMetaData     at Error (native)
+23 silly fetchPackageMetaData   errno: -2,
+23 silly fetchPackageMetaData   code: 'ENOENT',
+23 silly fetchPackageMetaData   syscall: 'open',
+23 silly fetchPackageMetaData   path: '/var/folders/8c/l1x58lhd0mj6kc1g796wptxr0000gp/T/npm-76581-ff15cf6b/unpack-a2c2d03d/package.json' }
+24 silly rollbackFailedOptional Starting
+25 silly rollbackFailedOptional Finishing
+26 silly runTopLevelLifecycles Finishing
+27 silly install printInstalled
+28 verbose stack Error: ENOENT: no such file or directory, open '/var/folders/8c/l1x58lhd0mj6kc1g796wptxr0000gp/T/npm-76581-ff15cf6b/unpack-a2c2d03d/package.json'
+28 verbose stack     at Error (native)
+29 verbose cwd /Users/sumantk/Documents_IBM/Samriddhi/samjson
+30 error Darwin 16.3.0
+31 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "config.json"
+32 error node v6.9.1
+33 error npm  v3.10.8
+34 error path /var/folders/8c/l1x58lhd0mj6kc1g796wptxr0000gp/T/npm-76581-ff15cf6b/unpack-a2c2d03d/package.json
+35 error code ENOENT
+36 error errno -2
+37 error syscall open
+38 error enoent ENOENT: no such file or directory, open '/var/folders/8c/l1x58lhd0mj6kc1g796wptxr0000gp/T/npm-76581-ff15cf6b/unpack-a2c2d03d/package.json'
+39 error enoent ENOENT: no such file or directory, open '/var/folders/8c/l1x58lhd0mj6kc1g796wptxr0000gp/T/npm-76581-ff15cf6b/unpack-a2c2d03d/package.json'
+39 error enoent This is most likely not a problem with npm itself
+39 error enoent and is related to npm not being able to find a file.
+40 verbose exit [ -2, true ]
